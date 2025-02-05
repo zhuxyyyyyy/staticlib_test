@@ -1,0 +1,15 @@
+CXX = g++
+CXXFLAGS = -Wall
+INCLUDES = -I.
+LIBS = -L. -lhelloworld
+
+TARGET = test_program
+SRCS = main.cpp
+
+all: $(TARGET)
+
+$(TARGET): $(SRCS) libhelloworld.a
+	$(CXX) $(CXXFLAGS) $(INCLUDES) $(SRCS) $(LIBS) -o $@
+
+clean:
+	rm -f $(TARGET) 
